@@ -24,7 +24,7 @@ jobs:
       - name: Prepare
         run: |
                 sudo apt update
-                sudo apt install texlive texlive-lang-german latexmk
+                sudo apt install texlive texlive-lang-german latexmk texlive-latex-extra
                 sudo apt install -y python3-pip python3-venv pandoc
                 pip install python-frontmatter
                 pip install pypandoc
