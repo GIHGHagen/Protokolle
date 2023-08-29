@@ -13,7 +13,6 @@ for root, dirs, files in os.walk("."):
             markdown_files.append(os.path.join(root, file))
 
 # remove template files and Readme.md (only lint protocol files)
-print(markdown_files)
 markdown_files.remove("./Vorstandssitzungen/protokollvorlage.md")
 markdown_files.remove("./Mitgliederversammlungen/protokollvorlage.md")
 markdown_files.remove("./Readme.md")

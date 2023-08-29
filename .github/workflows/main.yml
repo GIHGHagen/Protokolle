@@ -23,9 +23,9 @@ jobs:
                 python3 linter.py
       - name: Prepare
         run: |
-                apt update
-                apt install texlive
-                apt install -y python3-pip python3-venv pandoc    
+                sudo apt update
+                sudo apt install texlive
+                sudo apt install -y python3-pip python3-venv pandoc    
                 pip install python3-frontmatter
                 pip install pypandoc
       - name: Run Mitgliederversammlung
