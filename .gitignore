@@ -1,0 +1,52 @@
+# Keine Backups
+*.bak
+!.gitignore
+!.github
+!Mitgliederversammlungen
+!Vorstandssitzungen
+!Readme.md
+!template.tex
+!generate-protocol.py
+!Logo Paderborn.png
+!imt_names.py
+!.gitlab-ci.yml
+!linter.py
+!requirements.txt
+
+# Mitgliederversammlungen
+!Mitgliederversammlungen/protokollvorlage.md
+
+# Only allow the existing months
+!Mitgliederversammlungen/*/01/*-*-*.md
+!Mitgliederversammlungen/*/02/*-*-*.md
+!Mitgliederversammlungen/*/03/*-*-*.md
+!Mitgliederversammlungen/*/04/*-*-*.md
+!Mitgliederversammlungen/*/05/*-*-*.md
+!Mitgliederversammlungen/*/06/*-*-*.md
+!Mitgliederversammlungen/*/07/*-*-*.md
+!Mitgliederversammlungen/*/08/*-*-*.md
+!Mitgliederversammlungen/*/09/*-*-*.md
+!Mitgliederversammlungen/*/10/*-*-*.md
+!Mitgliederversammlungen/*/11/*-*-*.md
+!Mitgliederversammlungen/*/12/*-*-*.md
+
+!Mitgliederversammlungen/*/*/.gitkeep
+
+# Vorstandssitzungen
+!Vorstandssitzungen/protokollvorlage.md
+
+# Only allow the existing months
+!Vorstandssitzungen/*/01/*-*-*.md
+!Vorstandssitzungen/*/02/*-*-*.md
+!Vorstandssitzungen/*/03/*-*-*.md
+!Vorstandssitzungen/*/04/*-*-*.md
+!Vorstandssitzungen/*/05/*-*-*.md
+!Vorstandssitzungen/*/06/*-*-*.md
+!Vorstandssitzungen/*/07/*-*-*.md
+!Vorstandssitzungen/*/08/*-*-*.md
+!Vorstandssitzungen/*/09/*-*-*.md
+!Vorstandssitzungen/*/10/*-*-*.md
+!Vorstandssitzungen/*/11/*-*-*.md
+!Vorstandssitzungen/*/12/*-*-*.md
+
+!Vorstandssitzungen/*/*/.gitkeep

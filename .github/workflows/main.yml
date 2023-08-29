@@ -1,0 +1,48 @@
+---
+name: Latex Build
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3      
+      - uses: actions/setup-python@v4
+        with:
+            python-version: '3.10' 
+      - name: Run Linter
+        run: |
+                python3 -m venv venv
+                source venv/bin/activate
+                pip3 install -r requirements.txt
+                python3 linter.py
+      - name: Prepare
+        run: |
+                apt update
+                apt install texlive
+                apt install -y python3-pip python3-venv pandoc    
+                pip install python3-frontmatter
+                pip install pypandoc
+      - name: Run Mitgliederversammlung
+        run: |
+                for protocol in $(find Mitgliederversammlungen -name "*-*-*.md" -exec basename {} .md \;); do
+                python3 generate-protocol.py -t m -d $protocol;
+                done
+      - name: Run Vorstandssitzung
+        run: |
+                for protocol in $(find Vorstandssitzungen -name "*-*-*.md" -exec basename {} .md \;); do
+                python3 generate-protocol.py -t v -d $protocol;
+                done
+      - uses: actions/upload-artifact@v3
+        with:
+          name: PDF
+          path: "Mitgliederversammlung_*.pdf"
+      - uses: actions/upload-artifact@v3
+        with:
+          name: PDF1
+          path: "Vorstandssitzung_*.pdf"

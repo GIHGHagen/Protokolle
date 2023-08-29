@@ -1,0 +1,60 @@
+
+
+variables:
+  LATEX_IMAGE: registry.gitlab.com/islandoftex/images/texlive:latest
+  PYTHON_IMAGE: docker.io/python:bullseye
+stages:
+  - test
+  - build
+  
+linting:
+  stage: test
+  image: $PYTHON_IMAGE
+  script:
+    - python3 -m venv venv
+    - source venv/bin/activate
+    - pip3 install -r requirements.txt
+    - python3 linter.py
+  tags:
+    - shared
+build-mitgliederversammlung:
+  stage: build
+  image: $LATEX_IMAGE
+  dependencies:
+    - linting
+  script:
+    - apt update
+    - apt install -y python3-pip python3-venv pandoc
+    - python3 -m venv venv
+    - source venv/bin/activate
+    - pip install python-frontmatter
+    - pip install pypandoc
+    - for protocol in $(find Mitgliederversammlungen -name "*-*-*.md" -exec basename {} .md \;); do
+        python3 generate-protocol.py -t m -d $protocol;
+      done
+  artifacts:
+    paths:
+      - "Mitgliederversammlung_*.pdf"
+  tags:
+    - shared
+
+build-vorstandssitzung:
+  stage: build
+  image: $LATEX_IMAGE
+  dependencies:
+    - linting
+  script:
+    - apt update
+    - apt install -y python3-pip python3-venv pandoc
+    - python3 -m venv venv
+    - source venv/bin/activate
+    - pip install python-frontmatter
+    - pip install pypandoc
+    - for protocol in $(find Vorstandssitzungen -name "*-*-*.md" -exec basename {} .md \;); do
+        python3 generate-protocol.py -t v -d $protocol;
+      done
+  artifacts:
+    paths:
+      - "Vorstandssitzung_*.pdf"
+  tags:
+    - shared

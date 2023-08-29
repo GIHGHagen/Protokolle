@@ -1,0 +1,68 @@
+\documentclass[12pt, a4paper]{scrartcl}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[hidelinks]{hyperref}
+\usepackage{lastpage}
+\usepackage{scrlayer-fancyhdr}
+
+\setcounter{secnumdepth}{0}
+\setlength{\headheight}{49.16028pt}
+
+% Definitions
+\newcommand*{\type}{REPLACE_TYPE}
+\newcommand*{\sitzungstag}{REPLACE_DATE}
+\newcommand*{\sitzungsbeginn}{REPLACE_BEGIN}
+\newcommand*{\sitzungsende}{REPLACE_END}
+\newcommand*{\protokollName}{REPLACE_PROTOKOLL_NAME}
+\newcommand*{\protokollTitle}{REPLACE_PROTOKOLL_TITLE}
+\newcommand*{\sitzungsleitung}{REPLACE_SITZUNGSLEITUNG}
+
+\newcommand*{\signatureline}{
+\vspace*{1cm}
+\\
+\begin{tabular}{p{7cm}}
+\hrulefill \\
+\sitzungsleitung \\
+{\tiny Sitzungsleitung}\\
+\end{tabular}}
+
+
+% Heading
+\fancypagestyle{plain}{%
+\fancyhf{}                           % Alle Kopf- und Fußzeilenfelder bereinigen
+\fancyhead[L]{Protokoll GI Hochschulgruppe \\
+\type vom \sitzungstag}                 % Kopfzeile links
+\fancyhead[C]{}
+\fancyhead[R]{\includegraphics[width=0.1\textwidth]{Logo Hagen.png}}   % Kopfzeile rechts
+\renewcommand{\headrulewidth}{0.4pt} % Obere Trennlinie
+\fancyfoot[C]{\thepage{} von \pageref{LastPage}}              % Seitennummer
+\renewcommand{\footrulewidth}{0.4pt}
+}
+
+\pagestyle{plain}
+
+% Set indentation to 0
+\setlength{\parindent}{0pt}
+
+% Pandoc stuff
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+
+
+
+\begin{document}
+\begin{center}
+{\LARGE Protokoll \type}\\[0.5cm]
+{\large Am \sitzungstag{} von \sitzungsbeginn{} bis \sitzungsende}\\[0.8cm]
+{\large \protokollTitle: \protokollName}\\
+{\large Sitzungsleitung: \sitzungsleitung}\\[0.5cm]
+\end{center}
+REPLACE_CONTENT
+\end{document}
