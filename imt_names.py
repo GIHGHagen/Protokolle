@@ -1,5 +1,6 @@
 imt_names = {
-    "manns": {"name": "Sascha Manns", "protocol_title": "Protokollant"}
+    "manns": {"name": "Sascha Manns", "protocol_title": "Protokollant"},
+    "schymura": {"name": "Tamara Schymura", "protocol_title": "Protokollantin"}
 }
 
 
