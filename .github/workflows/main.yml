@@ -40,9 +40,9 @@ jobs:
                 done
       - uses: actions/upload-artifact@v3
         with:
-          name: PDF
+          name: Mitgliederversammlung
           path: "Mitgliederversammlung_*.pdf"
       - uses: actions/upload-artifact@v3
         with:
-          name: PDF1
+          name: Vorstandssitzung
           path: "Vorstandssitzung_*.pdf"
