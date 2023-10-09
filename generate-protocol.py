@@ -141,7 +141,7 @@ if args.format == "pdf":
         protocol_type[:-1] + "_" + args.date,
         args.signature,
     )
-    else
+    else:
     generate_pdf(
         protocol_path,
         protocol_type[:-2] + "_" + args.date,
