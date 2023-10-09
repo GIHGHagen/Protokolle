@@ -4,6 +4,7 @@
 !.github
 !Mitgliederversammlungen
 !Vorstandssitzungen
+!Rechenschaftsberichte
 !Readme.md
 !template.tex
 !generate-protocol.py
@@ -50,3 +51,22 @@
 !Vorstandssitzungen/*/12/*-*-*.md
 
 !Vorstandssitzungen/*/*/.gitkeep
+
+# Rechenschaftsberichte
+!Rechenschaftsberichte/protokollvorlage.md
+
+# Only allow the existing months
+!Rechenschaftsberichte/*/01/*-*-*.md
+!Rechenschaftsberichte/*/02/*-*-*.md
+!Rechenschaftsberichte/*/03/*-*-*.md
+!Rechenschaftsberichte/*/04/*-*-*.md
+!Rechenschaftsberichte/*/05/*-*-*.md
+!Rechenschaftsberichte/*/06/*-*-*.md
+!Rechenschaftsberichte/*/07/*-*-*.md
+!Rechenschaftsberichte/*/08/*-*-*.md
+!Rechenschaftsberichte/*/09/*-*-*.md
+!Rechenschaftsberichte/*/10/*-*-*.md
+!Rechenschaftsberichte/*/11/*-*-*.md
+!Rechenschaftsberichte/*/12/*-*-*.md
+
+!Rechenschaftsberichte/*/*/.gitkeep

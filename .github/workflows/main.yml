@@ -38,6 +38,11 @@ jobs:
                 for protocol in $(find Vorstandssitzungen -name "*-*-*.md" -exec basename {} .md \;); do
                 python3 generate-protocol.py -t v -d $protocol;
                 done
+      - name: Run Rechenschaftsbericht
+        run: |
+                for protocol in $(find Rechenschaftsberichte -name "*-*-*.md" -exec basename {} .md \;); do
+                python3 generate-protocol.py -t v -d $protocol;
+                done              
       - uses: actions/upload-artifact@v3
         with:
           name: Mitgliederversammlung
@@ -46,3 +51,7 @@ jobs:
         with:
           name: Vorstandssitzung
           path: "Vorstandssitzung_*.pdf"
+      - uses: actions/upload-artifact@v3
+        with:
+          name: Rechenschaftsbericht
+          path: "Rechenschaftsbericht_*.pdf"

@@ -15,11 +15,13 @@ for root, dirs, files in os.walk("."):
 # remove template files and Readme.md (only lint protocol files)
 markdown_files.remove("./Vorstandssitzungen/protokollvorlage.md")
 markdown_files.remove("./Mitgliederversammlungen/protokollvorlage.md")
+markdown_files.remove("./Rechenschaftsberichte/protokollvorlage.md")
 markdown_files.remove("./Readme.md")
 
 # get frontmatter from "Vorstandssitzungen/protokollvorlage.md" and "Mitgliederversammlungen/protokollvorlage.md"
 metadata_vorstand = frontmatter.load("Vorstandssitzungen/protokollvorlage.md")
 metadata_mitgliederversammlung = frontmatter.load("Mitgliederversammlungen/protokollvorlage.md")
+metadata_rechenschaftsbericht = frontmatter.load("Rechenschaftsberichte/protokollvorlage.md")
 
 # lint all markdown files
 for file in markdown_files:
@@ -27,6 +29,8 @@ for file in markdown_files:
         reference_metadata = metadata_vorstand
     elif file.startswith("./Mitgliederversammlungen/"):
         reference_metadata = metadata_mitgliederversammlung
+    elif file.startswith("./Rechenschaftsberichte/":
+        reference_metadata = metadata_rechenschaftsbericht
     else:
         print("---")
         print("Unknown file type: " + file)

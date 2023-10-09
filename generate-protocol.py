@@ -78,7 +78,7 @@ parser = argparse.ArgumentParser(description="Generate protocol PDF.")
 parser.add_argument(
     "-t",
     "--type",
-    choices=["v", "Vorstandssitzungen", "m", "Mitgliederversammlungen"],
+    choices=["v", "Vorstandssitzungen", "m", "Mitgliederversammlungen", "r", "Rechenschaftsberichte" ],
     type=str,
     help="Protokoll Typ",
 )
@@ -114,6 +114,8 @@ if args.type in ["v", "Vorstandssitzungen"]:
     protocol_type = "Vorstandssitzungen"
 elif args.type in ["m", "Mitgliederversammlungen"]:
     protocol_type = "Mitgliederversammlungen"
+elif args.type in ["r", "Rechenschaftsberichte"]:
+    protocol_type = "Rechenschaftsberichte"
 else:
     print("Error: Unknown protocol type.")
     exit(1)
