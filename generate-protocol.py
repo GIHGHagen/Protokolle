@@ -68,6 +68,8 @@ def generate_pdf(protocol_path, output, signature):
     # cleanup
     subprocess.run(["latexmk", "-c", "-jobname=" + output, "protocol.tex"])
     subprocess.run(["rm", "protocol.tex"])
+    
+    
 
 
 # Parse arguments
@@ -133,6 +135,13 @@ protocol_path = (
 
 
 if args.format == "pdf":
+    if protocol_type == "Rechenschaftsberichte"
+        generate_pdf(
+        protocol_path,
+        protocol_type[:-1] + "_" + args.date,
+        args.signature,
+    )
+    else
     generate_pdf(
         protocol_path,
         protocol_type[:-2] + "_" + args.date,
