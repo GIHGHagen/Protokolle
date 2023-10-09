@@ -135,7 +135,7 @@ protocol_path = (
 
 
 if args.format == "pdf":
-    if protocol_type == "Rechenschaftsberichte"
+    if protocol_type == "Rechenschaftsberichte":
         generate_pdf(
         protocol_path,
         protocol_type[:-1] + "_" + args.date,
