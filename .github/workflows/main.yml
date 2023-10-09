@@ -41,7 +41,7 @@ jobs:
       - name: Run Rechenschaftsbericht
         run: |
                 for protocol in $(find Rechenschaftsberichte -name "*-*-*.md" -exec basename {} .md \;); do
-                python3 generate-protocol.py -t v -d $protocol;
+                python3 generate-protocol.py -t r -d $protocol;
                 done              
       - uses: actions/upload-artifact@v3
         with:
