@@ -137,16 +137,16 @@ protocol_path = (
 if args.format == "pdf":
     if protocol_type == "Rechenschaftsberichte":
         generate_pdf(
-        protocol_path,
-        protocol_type[:-1] + "_" + args.date,
-        args.signature,
-    )
+            protocol_path,
+            protocol_type[:-1] + "_" + args.date,
+            args.signature,
+        )
     else:
-    generate_pdf(
-        protocol_path,
-        protocol_type[:-2] + "_" + args.date,
-        args.signature,
-    )
+        generate_pdf(
+            protocol_path,
+            protocol_type[:-2] + "_" + args.date,
+            args.signature,
+        )
 elif args.format == "html":
     if args.signature:
         print("Error: HTML Protocols can't have signatures."
