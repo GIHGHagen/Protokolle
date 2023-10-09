@@ -29,7 +29,7 @@ for file in markdown_files:
         reference_metadata = metadata_vorstand
     elif file.startswith("./Mitgliederversammlungen/"):
         reference_metadata = metadata_mitgliederversammlung
-    elif file.startswith("./Rechenschaftsberichte/":
+    elif file.startswith("./Rechenschaftsberichte/"):
         reference_metadata = metadata_rechenschaftsbericht
     else:
         print("---")
