@@ -8,6 +8,7 @@ location: "<Raum>"
 sitzungsleitung: "<IMT-Name>"
 published: false
 ---
+
 ## Mitgliederentwicklung (Zu- und Abgänge)
 
 ## Durchgeführte Veranstaltungen
